@@ -53,10 +53,7 @@ subprojects {
             url 'http://files.basex.org/maven'
         }
         maven {
-            url "http://repo.medvision360.org/release/"
-        }
-        maven {
-            url "http://repo.medvision360.org/snapshot/"
+            url "http://maven.medvision360.org/public/release/"
         }
 
         // order matters...
@@ -136,7 +133,7 @@ subprojects {
                 jstl                : '1.2',
                 junit               : '4.11',
                 logback             : '1.0.13',
-                medvisionlib        : 'latest.integration',
+                medvisionlib        : '2.1.1.+',
                 openEhr             : '1.0.6-SNAPSHOT',
                 postgresql          : '9.2-1003-jdbc4',
                 restlet             : '2.2-M1',
