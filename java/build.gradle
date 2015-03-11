@@ -62,6 +62,9 @@ subprojects {
 }
 
 allprojects {
+    // Intentando generar los proyectos para eclipse
+    apply plugin: 'eclipse-wtp'
+
     // The IDEA plugin picks up sourceCompatibility from the Java plugin so
     // make sure the root project has a proper Java configuration.
     apply plugin: 'java'
