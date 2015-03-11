@@ -23,11 +23,13 @@ import com.medvision360.medrecord.server.ehr.EHRUndeleteServerResource;
 import com.medvision360.medrecord.server.locatable.LocatableEHRServerResource;
 import com.medvision360.medrecord.server.locatable.LocatableListServerResource;
 import com.medvision360.medrecord.server.locatable.LocatableServerResource;
+import com.medvision360.medrecord.server.query.AQLQueryServerResource;
 import com.medvision360.medrecord.server.query.QueryEHRServerResource;
 import com.medvision360.medrecord.server.query.QueryLocatableServerResource;
 import com.medvision360.medrecord.server.query.XQueryLocatableServerResource;
 import com.medvision360.medrecord.server.query.XQueryServerResource;
 import com.medvision360.medrecord.server.test.TestClearServerResource;
+
 import org.restlet.Restlet;
 import org.restlet.resource.Directory;
 import org.restlet.resource.ServerResource;
@@ -102,6 +104,7 @@ public class MedRecordServerApplication extends RestletApplication
         // todo        /locatable/{id}/audit
         root.attach(  "/query/locatable",                       tx(QueryLocatableServerResource.class)               );
         root.attach(  "/query/ehr",                             tx(QueryEHRServerResource.class)                     );
+        root.attach(  "/query/aqlquery",                        tx(AQLQueryServerResource.class)                     );
         root.attach(  "/query/xquery",                          tx(XQueryServerResource.class)                       );
         root.attach(  "/query/xquery/locatable",                tx(XQueryLocatableServerResource.class)              );
         root.attach(  "/test/clear",                            tx(TestClearServerResource.class)                    );

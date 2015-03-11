@@ -286,8 +286,53 @@
         }
       
       ]
-    }
+    },
+    {
+        "path": "/query/aqlquery",
+        "operations": [
 
+          {
+            "notes": "Executes the provided AQLQuery against all XQuery-capable storage mechanisms for locatables on the server.",
+            "methodName": "com.medvision360.medrecord.api.query.AQLQueryResource#aqlQuery()",
+            "httpMethod": "Get",
+            "nickname": "com_medvision360_medrecord_api_query_m_aqlQuery",
+            "summary": "XQuery locatable resources. ",
+            "responseClass": "org.restlet.representation.Representation",
+      
+            "produces": ["text/plain"],
+      
+            "parameters": [            {
+                              "defaultValue": "//archetype_details/archetype_id/value/text()",
+                "paramType":              "query",
+                "dataType": "string",
+                "name": "q",
+                "description": "An AQLQuery, written to run against (a) collection(s) that contains openEHR XML data",
+                "required": true
+              }
+
+            ],
+            "errorResponses": [            {
+                "code": "400 (INVALID_QUERY_EXCEPTION)",
+                "reason": "Not a valid query: {0}"            }
+  ,
+              {
+                "code": "500 (UNSUPPORTED_QUERY_EXCEPTION)",
+                "reason": "Query not supported: {0}"            }
+  ,
+              {
+                "code": "500 (RECORD_EXCEPTION)",
+                "reason": "Generic error in server: {0}"            }
+  ,
+              {
+                "code": "500 (IO_RECORD_EXCEPTION)",
+                "reason": "Generic IO error in server: {0}"            }
+
+
+            ]
+          }
+        
+        ]
+      }
   ],
   "models": {
     "com.medvision360.medrecord.api.IDList": {
